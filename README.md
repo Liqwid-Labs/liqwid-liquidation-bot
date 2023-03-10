@@ -27,7 +27,7 @@ individual wallets, and set up their env-files (details below) accordingly.
 Running:
 
 ```
-docker load < liqwid-liquidation-bot.tar.gz
+docker pull ghcr.io/liqwid-labs/liqwid-liquidation-bot
 docker run --env-file liquidationBotEnv liqwid-liquidation-bot:latest
 ```
 
