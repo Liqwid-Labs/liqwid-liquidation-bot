@@ -24,11 +24,11 @@ individual wallets, and set up their env-files (details below) accordingly.
 
 ## Usage
 
-Running:
+After modifying the env-file, run:
 
 ```
-docker pull ghcr.io/liqwid-labs/liqwid-liquidation-bot
-docker run --env-file liquidationBotEnv liqwid-liquidation-bot:latest
+docker pull ghcr.io/liqwid-labs/liqwid-liquidation-bot:mainnet-djed
+docker run --env-file liquidationBotEnv liqwid-liquidation-bot:mainnet-djed
 ```
 
 > NOTE: Due to the static parameterization of the protocol two docker images of the
