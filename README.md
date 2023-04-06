@@ -127,6 +127,11 @@ default: 20 slots
 
 Set the Market with which the bot should run on.
 
+Current available Markets:
+- Ada
+- DJED
+- SHEN
+
 ```
 MARKET=DJED
 ```
