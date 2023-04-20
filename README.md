@@ -99,7 +99,7 @@ KUPO_PATH=
 ```
 
 > NOTE: docker must expose connections to these services.
-> 
+
 > NOTE: If a user does not provide their own configuration, the bot will use the default Liqwid services.
 
 ### Optional params
