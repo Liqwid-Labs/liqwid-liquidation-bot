@@ -79,7 +79,10 @@ SKEY=cborHex_signing_key
 ### Optional services
 
 The bot needs access to Kupo, Ogmios and Ogmios Datum Cache.
-Configure these via the following environment variables:
+
+> NOTE: If a user does not provide their own configuration, the bot will use the default Liqwid services.
+
+These can be configured via the following environment variables:
 
 ```
 OGMIOS_PORT=1337
@@ -99,7 +102,7 @@ KUPO_PATH=
 ```
 
 > NOTE: docker must expose connections to these services.
-> NOTE: If a user does not provide their own configuration, the bot will use the default Liqwid services.
+
 
 ### Optional params
 
