@@ -78,7 +78,7 @@ SKEY=cborHex_signing_key
 
 ### Optional services
 
-The bot needs access to Kupo, Ogmios and Ogmios Datum Cache.
+The bot needs access to Kupo and Ogmios.
 Configure these via the following environment variables:
 
 ```
@@ -86,11 +86,6 @@ OGMIOS_PORT=1337
 OGMIOS_HOST=localhost
 OGMIOS_SECURE=false
 OGMIOS_PATH=
-
-DATUM_CACHE_PORT=9999
-DATUM_CACHE_HOST=localhost
-DATUM_CACHE_SECURE=false
-DATUM_CACHE_PATH=
 
 KUPO_PORT=1442
 KUPO_HOST=localhost
@@ -108,10 +103,20 @@ KUPO_PATH=
 Set the level of logging for debugging.
 
 ```
-VERBOSE=false
+VERBOSE=true
 ```
 
 default: false (No debug logging)
+
+### Logging
+
+Enable the plaintext logger without color or control codes.
+
+```
+PLAIN_LOG=true
+```
+
+default: false (use colorful logging)
 
 ### Interval
 
@@ -150,3 +155,76 @@ HEARTBEAT_PORT=2002
 ```
 
 default: `127.0.0.1`, port `2002`
+
+### Buffer
+
+Set a minimum amount of "buffer" of underlying
+assets which the bot wont use for liquidations.
+This is required to keep some Ada to pay for
+transaction fees.
+
+```
+BUFFER=100000000
+```
+
+default: 0
+
+### Check Profit
+
+Enable the profit-check, ensuring that
+liquidations transactions aren't making a loss
+in real-value at the time of the transaction.
+Enabled when uncommented with any value set.
+
+```
+CHECK_PROFIT=true
+```
+
+default: false
+
+### Profit Amount
+
+Add a minimum percentage of profit
+to ensure when making Liquidations.
+This can be useful to account for
+DEX fees, slippage, tx fees & further price
+drops since the transaction.
+
+*NOTE:* If this is set higher than the current
+liquidation bonus, you will not make any liquidations
+
+```
+PROFIT_AMOUNT=1
+```
+
+default: 0%
+
+### Enable Redeems
+
+Enable automatically redeeming the seized
+QTokens.
+Enabled when uncommented with any value set
+
+```
+ENABLE_REDEEMS=true
+```
+
+default: false
+
+### Send to Address
+
+Send seized QTokens to an address, or,
+when ENABLE_REDEEMS is set, send redemeed
+underlying.
+Accepts Bech32 (addr1... format),
+or raw CBOR Hex
+
+*NOTE:* This currently does not accept
+native/plutus script addresses, and ignores
+the Staking credential.
+
+```
+SEND_TO_ADDRESS=<your address here>
+```
+
+default: Nothing
