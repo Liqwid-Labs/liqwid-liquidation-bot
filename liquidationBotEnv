@@ -1,5 +1,7 @@
 # Required
 
+LIQWID_CONFIG=liqwid-mainnet-config.json
+
 # CBOR Hex-encoded Signing Key
 # See: the instructions in README.md on how to generate this
 SKEY=Signing_Key_Here
