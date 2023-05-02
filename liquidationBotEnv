@@ -1,29 +1,78 @@
-//Required
+# Required
 
+# CBOR Hex-encoded Signing Key
+# See: the instructions in README.md on how to generate this
 SKEY=Signing_Key_Here
 
-//Optional
-
-OGMIOS_PORT=443
-OGMIOS_HOST=ogmios.liqwiddev.net
-OGMIOS_SECURE=true
+# Server config for ogmios
+OGMIOS_PORT=1337
+OGMIOS_HOST=localhost
+OGMIOS_SECURE=false
 OGMIOS_PATH=
 
-DATUM_CACHE_PORT=443
-DATUM_CACHE_HOST=odc.liqwiddev.net
-DATUM_CACHE_SECURE=true
-DATUM_CACHE_PATH=
-
-KUPO_PORT=443
-KUPO_HOST=kupo.liqwiddev.net
-KUPO_SECURE=true
+# Server config for kupo
+KUPO_PORT=1442
+KUPO_HOST=localhost
+KUPO_SECURE=false
 KUPO_PATH=
 
-VERBOSE=false
+# Set verbose output
+# (enabled when uncommented with any value set)
+# VERBOSE=true
 
+# Use a plaintext logger (without color or control codes)
+# PLAIN_LOG=true
+
+# Market to run liquidations in,
+# and the asset you need to fund the bot wallet with
 MARKET=Ada
+# MARKET=DJED
+# MARKET=SHEN
 
+# Retry interval
 INTERVAL=20
 
+# Address to expose a 'heartbeat' request
 HEARTBEAT_ADDR=127.0.0.1
 HEARTBEAT_PORT=2002
+
+# Set a minimum amount of "buffer" of underlying
+# assets which the bot wont use for liquidations.
+# This is required to keep some Ada to pay for
+# transaction fees.
+
+# This defaults to 0 if uncommented
+# For ADA Markets, it's recommended to set this
+# to 10 ADA (10M lovelace)
+# BUFFER=10000000
+
+
+# Enable the profit-check, ensuring that
+# liquidations transactions aren't making a loss
+# in real-value at the time of the transaction.
+# Enabled when uncommented with any value set
+CHECK_PROFIT=true
+
+# Add a minimum percentage of profit
+# to ensure when making Liquidations.
+# This can be useful to account for
+# DEX fees, slippage, tx fees & further price
+# drops since the transaction.
+# NOTE: If this is set higher than the current
+# liquidation bonus, you will not make any liquidations
+PROFIT_AMOUNT=1
+
+# Enable automatically redeeming the seized
+# QTokens.
+# Enabled when uncommented with any value set
+# ENABLE_REDEEMS=true
+
+# Send seized QTokens to an address, or,
+# when ENABLE_REDEEMS is set, send redemeed
+# underlying.
+# Accepts Bech32 (addr1... format),
+# or raw CBOR Hex
+# NOTE: This currently does not accept
+# native/plutus script addresses, and ignores
+# the Staking credential.
+# SEND_TO_ADDRESS=<your address here>
