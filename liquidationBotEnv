@@ -22,8 +22,8 @@ KUPO_PATH=
 # (enabled when uncommented with any value set)
 # VERBOSE=true
 
-# Use a plaintext logger (without color or control codes)
-# PLAIN_LOG=true
+# Use different logger (DefaultLogger | NoColourLogger | NoControlLogger)
+# LOGGER=NoColourLogger
 
 # Market to run liquidations in,
 # and the asset you need to fund the bot wallet with

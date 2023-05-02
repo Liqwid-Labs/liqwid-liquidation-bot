@@ -111,12 +111,16 @@ default: false (No debug logging)
 ### Logging
 
 Enable the plaintext logger without color or control codes.
+Select other loggers:
+- `DefaultLogger`: Regular logger with colors/control codes
+- `NoColourLogger`: Plaintext logger with no color/control codes
+- `NoControlLogger`: Almost identical to `NoColourLogger` but implemented differently
 
 ```
-PLAIN_LOG=true
+LOGGER=DefaultLogger
 ```
 
-default: false (use colorful logging)
+default: DefaultLogger
 
 ### Interval
 
