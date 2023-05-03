@@ -130,7 +130,7 @@ Set the liquidation loop interval in number of slots.
 INTERVAL=20
 ```
 
-default: 20 slots
+default: 5 slots
 
 ### Market
 
