@@ -61,6 +61,12 @@ The docker image expects either `WALLET_MNEMONIC` or `SKEY` in the environment.
 WALLET_MNEMONIC=word1 word2 word3
 ```
 
+An account index for this mnemonic wallet can also be selected via the environment:
+
+```
+WALLET_ACCOUNT=1
+```
+
 #### Signing key wallet
 
 > NOTE: The key generation process described below will produce _sensitive data_.
