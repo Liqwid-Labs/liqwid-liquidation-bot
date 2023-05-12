@@ -27,14 +27,9 @@ individual wallets, and set up their env-files (details below) accordingly.
 After modifying the env-file, run:
 
 ```
-docker pull ghcr.io/liqwid-labs/liqwid-liquidation-bot:mainnet
-docker run --env-file liquidationBotEnv liqwid-liquidation-bot:mainnet
+docker pull ghcr.io/liqwid-labs/liqwid-liquidation-bot:main
+docker run --env-file liquidationBotEnv liqwid-liquidation-bot:main
 ```
-
-> NOTE: Due to the static parameterization of the protocol two docker images of the
-> bot are provided. One image intended for the mainnet and the other intended for
-> the preview testnet. Using the incorrect image for the network will result in the
-> bot not being able to identify the protocol and subsequently failing.
 
 To interact with the image, modify the environment variables (as described below)
 in the `liquidationBotEnv` file.
