@@ -19,7 +19,7 @@ automatically proceed directly to the next highest position.
 > working as intended.
 
 Each liquidation bot will liquidate a single market only. If you wish to liquidate
-loans in multiple markets, you must run two separate batching bots, set up
+loans in multiple markets, you must run two separate liquidation bots, set up
 individual wallets, and set up their env-files (details below) accordingly.
 
 ## Usage
