@@ -41,12 +41,37 @@ in the `liquidationBotEnv` file.
 
 ### Required keys
 
+Users must provide a wallet key in order to sign transactions. This can be done by supplying
+either a signing key or a mnemonic seed phrase.
+
+NOTE: The wallet must be funded in order to run the bot.
+The wallet will require the "underlying" currency of the market to liquidation
+loans within that market; i.e., ADA is required to liquidate an ADA loan, and
+DJED (plus ADA for transaction fees) is required to liquidate a DJED loan.
+
+Liquidations rewards (either qADA, qDJED, or both) will be paid back to the wallet.
+These rewards _are not_ automatically redeemed; you must redeem them manually.
+Future version of the bot will include a default redemption strategy.
+
+The docker image expects either `WALLET_MNEMONIC` or `SKEY` in the environment. 
+
+#### Mnemonic wallet
+
+`WALLET_MNEMONIC` is the list of seed phrase words as used in a light wallet:
+
+> NOTE: No environment variables require quotes. `word1 word2 word3` and NOT
+> `"word1 word2 word3"`.
+
+```
+WALLET_MNEMONIC=word1 word2 word3
+```
+
+#### Signing key wallet
+
 > NOTE: The key generation process described below will produce _sensitive data_.
 > Make sure you properly store the keys, and generate them on a machine you trust.
 
-Users must provide a wallet key in order to sign transactions.
-
-You can generate a new key with `cardano-cli`. For example:
+You can also generate a new private key with `cardano-cli`. For example:
 
 ```sh
 # Enter a nix shell with the cardano cli available
@@ -59,18 +84,10 @@ cardano-cli address key-gen --signing-key-file key.skey --verification-key-file 
 cardano-cli address build --payment-verification-key-file key.vkey --out-file payment.addr [--mainnet | --testnet-magic 2]
 ```
 
-NOTE: Once generated the `payment.addr` must be funded in order to run the bot.
-The wallet will require the "underlying" currency of the market to liquidation
-loans within that market; i.e., ADA is required to liquidate an ADA loan, and
-DJED (plus ADA for transaction fees) is required to liquidate a DJED loan.
+NOTE: Once generated the address used to fund your wallet will be in `payment.addr`.
 
-Liquidations rewards (either qADA, qDJED, or both) will be paid back to the wallet.
-These rewards _are not_ automatically redeemed; you must redeem them manually.
-Future version of the bot will include a default redemption strategy.
+`SKEY` is the `cborHex` field of the key.skey file:
 
-The environment variable expected by the docker image is then `SKEY` which is the `cborHex` field of the key.skey file:
-
-> NOTE: No environment variables require quotes. `cborHex_signing_key` and NOT `"cborHex_signing_key"`.
 
 ```
 SKEY=cborHex_signing_key
