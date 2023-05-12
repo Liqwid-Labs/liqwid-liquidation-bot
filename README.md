@@ -43,6 +43,10 @@ NOTE: The wallet must be funded in order to run the bot.
 The wallet will require the "underlying" currency of the market to liquidation
 loans within that market; i.e., ADA is required to liquidate an ADA loan, and
 DJED (plus ADA for transaction fees) is required to liquidate a DJED loan.
+In the case of mnemonic wallets the provided funds must be staked at the account's 
+primary address. For private key wallets the bot will use an unstaked address. The
+address you need to fund will be logged by the bot along with the current 
+underlying balance at bot startup.
 
 Liquidations rewards (either qADA, qDJED, or both) will be paid back to the wallet.
 These rewards _are not_ automatically redeemed; you must redeem them manually.
