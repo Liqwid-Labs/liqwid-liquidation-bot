@@ -2,9 +2,9 @@
 
 LIQWID_CONFIG=liqwid-mainnet-config.json
 
-# CBOR Hex-encoded Signing Key
-# See: the instructions in README.md on how to generate this
-SKEY=Signing_Key_Here
+WALLET_MNEMONIC=word1 word2 word3
+# Optional account index to use for this wallet
+# WALLET_ACCOUNT=1
 
 # Server config for ogmios
 OGMIOS_PORT=1337
