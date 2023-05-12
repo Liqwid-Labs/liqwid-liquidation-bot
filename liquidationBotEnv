@@ -4,7 +4,7 @@ LIQWID_CONFIG=liqwid-mainnet-config.json
 
 WALLET_MNEMONIC=word1 word2 word3
 # Optional account index to use for this wallet
-# WALLET_ACCOUNT=1
+# WALLET_ACCOUNT=0
 
 # Server config for ogmios
 OGMIOS_PORT=1337
