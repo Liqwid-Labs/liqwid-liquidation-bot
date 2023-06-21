@@ -45,9 +45,10 @@ HEARTBEAT_PORT=2002
 # transaction fees.
 
 # This defaults to 0 if uncommented
-# For ADA Markets, it's recommended to set this
-# to 10 ADA (10M lovelace)
-# BUFFER=10000000
+# For ADA Markets, transactions may fail with too low
+# a buffer. It's recommended to set this to 30 ADA
+# (30M lovelace)
+# BUFFER=30000000
 
 
 # Enable the profit-check, ensuring that
