@@ -43,16 +43,16 @@ NOTE: The wallet must be funded in order to run the bot.
 The wallet will require the "underlying" currency of the market to liquidation
 loans within that market; i.e., ADA is required to liquidate an ADA loan, and
 DJED (plus ADA for transaction fees) is required to liquidate a DJED loan.
-In the case of mnemonic wallets the provided funds must be staked at the account's 
+In the case of mnemonic wallets the provided funds must be staked at the account's
 primary address. For private key wallets the bot will use an unstaked address. The
-address you need to fund will be logged by the bot along with the current 
+address you need to fund will be logged by the bot along with the current
 underlying balance at bot startup.
 
 Liquidations rewards (either qADA, qDJED, or both) will be paid back to the wallet.
 These rewards _are not_ automatically redeemed; you must redeem them manually.
 Future version of the bot will include a default redemption strategy.
 
-The docker image expects either `WALLET_MNEMONIC` or `SKEY` in the environment. 
+The docker image expects either `WALLET_MNEMONIC` or `SKEY` in the environment.
 
 #### Mnemonic wallet
 
@@ -103,14 +103,11 @@ OGMIOS_HOST=localhost
 OGMIOS_SECURE=false
 OGMIOS_PATH=
 
-KUPO_PORT=1442
-KUPO_HOST=localhost
-KUPO_SECURE=false
-KUPO_PATH=
+BLOCKFROST_PORT=
+BLOCKFROST_HOST=
+BLOCKFROST_SECURE=
+BLOCKFROST_PATH=/
 ```
-
-> NOTE: docker must expose connections to these services.
-> NOTE: If a user does not provide their own configuration, the bot will use the default Liqwid services.
 
 ### Optional params
 

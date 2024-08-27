@@ -12,11 +12,11 @@ OGMIOS_HOST=localhost
 OGMIOS_SECURE=false
 OGMIOS_PATH=
 
-# Server config for kupo
-KUPO_PORT=1442
-KUPO_HOST=localhost
-KUPO_SECURE=false
-KUPO_PATH=
+# Server config for blockfrost
+BLOCKFROST_PORT=
+BLOCKFROST_HOST=
+BLOCKFROST_SECURE=
+BLOCKFROST_PATH=/
 
 # Set verbose output
 # (enabled when uncommented with any value set)
