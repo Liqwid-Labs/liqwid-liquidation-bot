@@ -27,8 +27,8 @@ individual wallets, and set up their env-files (details below) accordingly.
 After modifying the env-file, run:
 
 ```
-docker pull ghcr.io/liqwid-labs/liqwid-liquidation-bot:main
-docker run --env-file liquidationBotEnv liqwid-liquidation-bot:main
+docker pull ghcr.io/liqwid-labs/liqwid-liquidation-bot:latest
+docker run --env-file liquidationBotEnv liqwid-liquidation-bot:latest
 ```
 
 To interact with the image, modify the environment variables (as described below)
